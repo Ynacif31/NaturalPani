@@ -1,0 +1,6 @@
+/* Force hide hamburger menu on desktop */
+@media (min-width: 768px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}

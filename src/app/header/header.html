@@ -1,0 +1,35 @@
+<mat-toolbar class="p-0 fixed shadow-md z-50 w-full backdrop-blur-md bg-opacity-90 transition-all duration-300" style="background-color: var(--background); color: var(--primary)">
+
+    <span class="truncate whitespace-nowrap font-display text-lg sm:text-xl md:text-2xl" style="color: var(--primary)">Natural Pani</span>
+
+    <span class="flex-1"></span>
+
+    <div class="hidden md:flex gap-2 md:gap-4 items-center">
+      <button matButton style="color: var(--primary); font-size: 0.875rem;" class="hover:opacity-80">Produtos</button>
+      <button matButton style="color: var(--primary); font-size: 0.875rem;" class="hover:opacity-80">Sobre</button>
+      <button matButton style="color: var(--primary); font-size: 0.875rem;" class="hover:opacity-80">Contato</button>
+    </div>
+
+    <button matIconButton style="color: var(--primary);" class="relative inline-flex" aria-label="Carrinho">
+      <mat-icon fontIcon="shopping_cart" matBadge="0"></mat-icon>
+      <!-- Badge opcional para quantidade de itens -->
+    </button>
+
+    <button matIconButton style="color: var(--primary);" class="hide-on-desktop" (click)="toggleMobileMenu()" aria-label="Menu">
+      <mat-icon fontIcon="menu"></mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="h-16"></div>
+
+<!-- Mobile Menu (conditional) -->
+<div class="bg-white shadow-md" *ngIf="mobileMenuOpen">
+  <nav class="flex flex-col gap-2 p-4">
+    <button matButton class="w-full text-left" style="color: var(--primary);"
+      (click)="toggleMobileMenu()">Produtos</button>
+    <button matButton class="w-full text-left" style="color: var(--primary);"
+      (click)="toggleMobileMenu()">Sobre</button>
+    <button matButton class="w-full text-left" style="color: var(--primary);"
+      (click)="toggleMobileMenu()">Contato</button>
+  </nav>
+</div>
